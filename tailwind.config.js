@@ -4,19 +4,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        panel: 'rgba(15, 23, 42, 0.65)',
-      },
-      boxShadow: {
-        glow: '0 20px 40px rgba(15, 23, 42, 0.35)',
-      },
-      animation: {
-        pulseSoft: 'pulseSoft 1.5s ease-in-out infinite',
-      },
-      keyframes: {
-        pulseSoft: {
-          '0%, 100%': { opacity: 0.45 },
-          '50%': { opacity: 0.85 },
-        },
+        accent: '#4d7eff',
+        'accent-foreground': '#dbe6ff',
       },
     },
   },

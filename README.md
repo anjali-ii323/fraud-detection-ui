@@ -1,10 +1,11 @@
 # AI Fraud Detection Dashboard
 
-Premium React + Tailwind dashboard UI for real-time fraud analysis.
+A premium React + Tailwind + Framer Motion UI for real-time scam analysis.
 
 ## Stack
 - React + Vite
 - Tailwind CSS
+- Framer Motion
 
 ## Run locally
 ```bash
@@ -19,5 +20,5 @@ Create a `.env` file from `.env.example`:
 VITE_API_BASE_URL=http://localhost:8000
 ```
 
-The app sends analysis requests to:
+The app calls:
 - `POST /analyze`
