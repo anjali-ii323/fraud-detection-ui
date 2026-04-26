@@ -2,10 +2,57 @@ import { motion } from 'framer-motion'
 import LivePreviewCard from '../components/LivePreviewCard'
 
 const features = [
-  'Real-time fraud detection',
-  'Multi-step reasoning engine',
-  'Explainable AI decisions',
-  'Financial impact awareness',
+  {
+    title: 'Real-time fraud detection',
+    description: 'Low-latency scoring continuously evaluates messages, links, and sender context as incidents unfold.',
+    icon: (
+      <svg viewBox="0 0 24 24" className="h-5 w-5 text-cyan-300" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7l8-4z" />
+        <path d="M9.5 12.5l1.8 1.8 3.7-3.7" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Multi-step reasoning',
+    description: 'A deterministic decision chain reveals how the agent parses signals before classifying risk.',
+    icon: (
+      <svg viewBox="0 0 24 24" className="h-5 w-5 text-cyan-300" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M7 8a2 2 0 1 1 0 4 2 2 0 0 1 0-4z" />
+        <path d="M17 8a2 2 0 1 1 0 4 2 2 0 0 1 0-4z" />
+        <path d="M12 16a2 2 0 1 1 0 4 2 2 0 0 1 0-4z" />
+        <path d="M9 10.5h6" />
+        <path d="M12 12.5v2" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Explainable AI',
+    description: 'Every output includes auditable evidence and traceable rationale for analyst sign-off.',
+    icon: (
+      <svg viewBox="0 0 24 24" className="h-5 w-5 text-cyan-300" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="4" y="4" width="16" height="16" rx="2" />
+        <path d="M8 8h6" />
+        <path d="M8 12h8" />
+        <path d="M8 16h4" />
+        <circle cx="16" cy="16" r="2" />
+        <path d="M18.5 18.5l2 2" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Financial impact awareness',
+    description: 'Capital exposure and potential prevention outcomes are surfaced in the same decision surface.',
+    icon: (
+      <svg viewBox="0 0 24 24" className="h-5 w-5 text-cyan-300" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M5 19h14" />
+        <path d="M7 15v4" />
+        <path d="M12 11v8" />
+        <path d="M17 7v12" />
+        <path d="M7 11h10" />
+        <path d="M7 7h5" />
+      </svg>
+    ),
+  },
 ]
 
 function LandingPage({ onNavigate }) {
@@ -32,7 +79,7 @@ function LandingPage({ onNavigate }) {
       <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
         {features.map((feature, idx) => (
           <motion.article
-            key={feature}
+            key={feature.title}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: idx * 0.06 }}
@@ -40,8 +87,11 @@ function LandingPage({ onNavigate }) {
             whileHover={{ y: -4, scale: 1.01 }}
             className="glass-card group p-5"
           >
-            <div className="mb-4 h-9 w-9 rounded-lg bg-cyan-400/10 transition group-hover:bg-cyan-400/20" />
-            <h3 className="text-sm font-medium text-slate-100">{feature}</h3>
+            <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-lg bg-cyan-400/10 transition group-hover:bg-cyan-400/20">
+              {feature.icon}
+            </div>
+            <h3 className="text-sm font-medium text-slate-100">{feature.title}</h3>
+            <p className="mt-3 text-sm leading-6 text-slate-300">{feature.description}</p>
           </motion.article>
         ))}
       </section>
