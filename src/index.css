@@ -10,14 +10,66 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background: #0a0a0a;
-  color: #f5f5f5;
+  background: #05070f;
+  color: #e2e8f0;
 }
 
 * {
   box-sizing: border-box;
 }
 
+.bg-ink {
+  background: #05070f;
+}
+
 .glass-card {
   @apply rounded-2xl border border-white/10 bg-white/[0.04] shadow-[0_20px_50px_rgba(0,0,0,0.45)] backdrop-blur-xl;
+}
+
+.btn-primary {
+  @apply rounded-xl border border-cyan-300/40 bg-cyan-400/15 px-5 py-2.5 text-sm font-medium text-cyan-100 shadow-[0_0_30px_rgba(34,211,238,0.2)] transition hover:scale-[1.02] hover:shadow-[0_0_36px_rgba(34,211,238,0.32)];
+}
+
+.btn-secondary {
+  @apply rounded-xl border border-white/15 bg-white/[0.03] px-5 py-2.5 text-sm font-medium text-slate-200 transition hover:scale-[1.02] hover:bg-white/[0.07];
+}
+
+.input-field {
+  @apply w-full rounded-xl border border-white/10 bg-white/[0.02] px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 outline-none transition focus:border-cyan-300/60 focus:shadow-[0_0_0_3px_rgba(34,211,238,0.15)];
+}
+
+.hero-grid {
+  background: radial-gradient(circle at 15% 18%, rgba(99, 102, 241, 0.14), transparent 40%),
+    radial-gradient(circle at 80% 10%, rgba(34, 211, 238, 0.1), transparent 35%), #05070f;
+}
+
+.intro-bg {
+  background: radial-gradient(circle at 50% 40%, rgba(34, 211, 238, 0.14), transparent 42%),
+    radial-gradient(circle at 50% 80%, rgba(99, 102, 241, 0.12), transparent 40%), #05070f;
+  animation: drift 10s linear infinite alternate;
+}
+
+.signal-flow {
+  position: absolute;
+  inset: 0;
+  opacity: 0.08;
+  background-image: linear-gradient(90deg, transparent 0%, rgba(34, 211, 238, 0.55) 45%, transparent 100%);
+  background-size: 220% 100%;
+  animation: flow 6s linear infinite;
+  pointer-events: none;
+}
+
+.premium-cta {
+  background: radial-gradient(circle at 30% 30%, rgba(99, 102, 241, 0.24), transparent 55%),
+    radial-gradient(circle at 80% 80%, rgba(34, 211, 238, 0.14), transparent 40%), rgba(10, 10, 24, 0.7);
+}
+
+@keyframes flow {
+  from { background-position: 100% 0; }
+  to { background-position: -100% 0; }
+}
+
+@keyframes drift {
+  from { transform: scale(1); }
+  to { transform: scale(1.04); }
 }
