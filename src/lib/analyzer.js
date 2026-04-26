@@ -2,9 +2,9 @@ export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localho
 
 export const predictionStyles = {
   Safe: {
-    accent: 'text-emerald-300',
-    progress: 'bg-emerald-400',
-    risk: 'border-emerald-400/50 bg-emerald-400/10 text-emerald-200',
+    accent: 'text-cyan-200',
+    progress: 'bg-cyan-300',
+    risk: 'border-cyan-300/50 bg-cyan-400/10 text-cyan-200',
   },
   Fraud: {
     accent: 'text-red-300',
@@ -12,9 +12,9 @@ export const predictionStyles = {
     risk: 'border-red-400/50 bg-red-400/10 text-red-200',
   },
   Suspicious: {
-    accent: 'text-amber-300',
-    progress: 'bg-amber-400',
-    risk: 'border-amber-400/50 bg-amber-400/10 text-amber-200',
+    accent: 'text-indigo-200',
+    progress: 'bg-indigo-300',
+    risk: 'border-indigo-300/40 bg-indigo-400/10 text-indigo-200',
   },
 }
 
